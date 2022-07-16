@@ -1,2 +1,2 @@
 # Reclaim-Green
- SIH(Smart India Hackathon)'22 submission
+ Frontend for SIH(Smart India Hackathon)'22 submission
