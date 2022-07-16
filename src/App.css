@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*custom css*/
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container2 {
+  position: relative;
+  text-align: center;
+  height: 70vh;
+}
+.container22 {
+  position: relative;
+  text-align: center;
+}
+.container23 {
+  position: relative;
+  text-align: left;
+}
+.head1 {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #4ca950;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+.para1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.38;
+  padding: 0.5rem 10rem;
+}
+.fade-to-top{
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .3s;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wiggle:hover {
+  animation: wiggle .2s ease-in 5;
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(4deg)
+  }
+
+  50% {
+    transform: rotate(-4deg)
+  }
+
+  to {
+    transform: rotate(4deg)
+  }
+}
+
+.button1{
+  padding-top: 20px;
+}
+.button1 button{
+  padding: 1rem 6rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  color:#4ca950;
+  font-size: larger;
+  font-family: 'Poppins', sans-serif;
+}
+.button1 button:hover{
+  background-color: #007931;
+  color: azure;
+}
+
+.titleSpan:hover{
+  cursor: pointer;
+}
