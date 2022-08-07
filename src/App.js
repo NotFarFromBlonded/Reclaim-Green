@@ -10,8 +10,10 @@ import SectionOne from './TabComponents/SectionOne';
 import './App.css';
 import SectionTwo from './TabComponents/SectionTwo';
 import SectionThree from './TabComponents/SectionThree';
+import SectionFour from './TabComponents/SectionFour';
 import About from './TabComponents/About';
 import { EmissionState } from './Context';
+
 //import NavBar from './NavBar/NavBar';
 
 function TabPanel(props) {
@@ -94,6 +96,7 @@ function App() {
             <Tab label="GHG Calculator" {...a11yProps(1)} className={value===1?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
             <Tab label="Future Trends" {...a11yProps(2)} className={value===2?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
             <Tab label="CO2e Visualizer" {...a11yProps(3)} className={value===3?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
+            <Tab label="Roads" {...a11yProps(4)} className={value===4?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
           </Tabs>
         </Toolbar>
       </AppBar>
@@ -108,6 +111,9 @@ function App() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <SectionThree/>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <SectionFour/>
       </TabPanel>
     </div>
   );
