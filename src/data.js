@@ -1,0 +1,121 @@
+export const road_material = [
+    {
+        road_type: "National Highway",
+        abbr: "NH",
+        Carbon_emission: {
+            material: [{
+                Bitumen: [{
+                    volume:403.5,//mt/km
+                    volume_in_ton:444.78,//ton/km
+                    CO2emission:0.0725,//tons of CO2/km 
+                    cost:20578500//rs ton basis
+                    }],
+                Gravel: [{
+                    volume: 529.45,//mt/km
+                    volume_in_ton: 170,//ton/km
+                    CO2emission:0.22907,//tons of CO2/km
+                    cost:170000
+                    }],
+                Cement: [{
+                    volume: 907.18474,//mt/km
+                    volume_in_ton: 1000,//ton/km
+                    CO2emission:0.88888,//tons of CO2/km
+                    cost:2100000
+                    }],
+                Steelreinforcement: [{
+                    volume: 143.2,
+                    volume_in_ton: 157.85098,
+                    CO2emission:138.75,
+                    cost: 8523900,
+                    }],
+                Aggregate: [{
+                    volume: 31684.9,
+                    volume_in_ton:34926.623656,
+                    CO2emission: 4031.65033,//doubt
+                    // CO2emission: 4.031,//doubt
+                    cost:26194965
+                    }]
+            }]
+        }
+    },
+
+    {
+        road_type: "State Highway",
+        abbr: "SH",
+        Carbon_emission: {
+            material: [{
+                Bitumen: [{
+                    volume:70.8,//mt/km
+                    volume_in_ton:78.04364 ,//ton/km
+                    CO2emission:0.0725,//tons of CO2/km 
+                    cost:20578500//rs ton basis
+                    }],
+                Gravel: [{
+                    volume:840.2,//mt/km
+                    volume_in_ton:926.16,
+                    CO2emission:0.22907,//tons of CO2/km
+                    cost:170000
+                    }],
+                Cement: [{
+                    volume:107.4,
+                    volume_in_ton:118.38823 ,
+                    CO2emission:0.88888,//tons of CO2/km
+                    cost:2100000
+                    }],
+                Steelreinforcement: [{
+                    volume:12.6,
+                    volume_in_ton:13.88912 ,
+                    CO2emission:138.75,
+                    cost:8523900
+                    }],
+                Aggregate: [{
+                    volume:15119.2,
+                    volume_in_ton:16666.06517,
+                    CO2emission:4031.65033,//doubt
+                    // CO2emission: 4.031,//doubt
+                    cost:26194965
+                    }]
+            }]
+        }
+    },
+
+    {
+        road_type: "Rural Road",
+        abbr: "RR",
+        Carbon_emission: {
+            material: [{
+                Bitumen: [{
+                    volume:4.6,//mt/km
+                    volume_in_ton:5.07063 ,//ton/km
+                    CO2emission:0.0725,//tons of CO2/km 
+                    cost:20578500//rs ton basis
+                    }],
+                Gravel: [{
+                    volume:9.99,//mt/km
+                    volume_in_ton:11.01,
+                    CO2emission:0.22907,//tons of CO2/km
+                    cost:170000
+                    }],
+                Cement: [{
+                    volume:6.8,
+                    volume_in_ton:7.49572 ,
+                    CO2emission:0.88888,//tons of CO2/km
+                    cost:2100000
+                    }],
+                Steelreinforcement: [{
+                    volume:0.0,
+                    volume_in_ton:0.0 ,
+                    CO2emission:138.75,
+                    cost:8523900
+                    }],
+                Aggregate: [{
+                    volume:74.8,
+                    volume_in_ton:82.45289,
+                    CO2emission:4031.65033,//doubt
+                    // CO2emission: 4.031,//doubt
+                    cost:26194965
+                    }]
+            }]
+        }
+    }
+]
