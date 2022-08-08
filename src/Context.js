@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { mockGHGEmissionData, oilFactor, gasFactor, coalFactor } from './mockGHGEmissionData';
+import { road_material } from './data';
 import {countryWithReason} from './countriesWithReason'
 import { solutionsToReason } from './solutionsToReasons';
 import axios from 'axios';
@@ -22,7 +23,9 @@ const Context = ({children}) =>{
     const[loading, setLoading] = useState(false);
     const[predictedValues, setPredictedValues] = useState([]);
     const[submitting, setSubmitting] = useState(false);
-    const [value, setValue] = React.useState(0);
+    const[value, setValue] = React.useState(0);
+    const[highwayType, setHighwayType] = React.useState("NH")
+    const[highwayData, setHighwayData] = React.useState([road_material[0].Carbon_emission])
 
     const handleChange = (e) => {
         const selectedCountry = mockGHGEmissionData.find(country => country.country === e.target.value);
@@ -32,6 +35,12 @@ const Context = ({children}) =>{
         setElectricity(selectedCountry.electricityConsumption);
         setCoal(selectedCountry.coalConsumption * 28.32);
         setGHGEmission(((selectedCountry.electricityFactor*selectedCountry.electricityFactor+selectedCountry.oilConsumption*oilFactor+selectedCountry.coalConsumption * 28.32*coalFactor+selectedCountry.gasConsumption * 28.32*gasFactor)/1000).toFixed(3))
+    }
+
+    const handleChangeHighway = (e) => {
+        const highwayType = road_material.find(i => i.abbr === e.target.value);
+        setHighwayType(highwayType.abbr);
+        setHighwayData(highwayType.Carbon_emission);
     }
 
     const predictData = async() => {
@@ -111,7 +120,7 @@ const Context = ({children}) =>{
     }, [])
 
     return (
-        <Emission.Provider value={{value, setValue, handleWiggleImage, selectedCountry, electricity, oil, gas, coal, loading, handleChange, handleCountryChange, handleCauseChange, handleYearChange, handlePredictSubmit, ghgEmission, countryReasons, solutionsReason, selCountry, selCause, selYear, predictedValues, setPredictedValues, submitting}}>
+        <Emission.Provider value={{value, setValue, handleWiggleImage, selectedCountry, electricity, oil, gas, coal, loading, handleChange, handleCountryChange, handleCauseChange, handleYearChange, handlePredictSubmit, ghgEmission, countryReasons, solutionsReason, selCountry, selCause, selYear, predictedValues, setPredictedValues, submitting, highwayType, highwayData, handleChangeHighway}}>
             {children}
         </Emission.Provider>
     )

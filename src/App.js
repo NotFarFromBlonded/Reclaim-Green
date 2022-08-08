@@ -84,7 +84,7 @@ function App() {
   return (
     <div className={classes.root}>
       {/*<NavBar/>*/}
-      <AppBar position="fixed" style={{backgroundColor:"white"}}>
+      <AppBar position="static" style={{backgroundColor:"white"}}>
         <Toolbar className = {classes.toolb} style = {{padding:0}}>
 
           <Typography className={classes.title} variant="h5">

@@ -25,7 +25,7 @@ export const road_material = [
                 cost:2100000
             },
             {
-                material: "Steelreinforcement",
+                material: "Steel Reinforcement",
                 volume: 143.2,
                 volume_in_ton: 157.85098,
                 CO2emission:138.75,
@@ -70,7 +70,7 @@ export const road_material = [
                 cost:2100000
             },
             {
-                material: "Steelreinforcement",
+                material: "Steel Reinforcement",
                 volume:12.6,
                 volume_in_ton:13.88912 ,
                 CO2emission:138.75,
@@ -114,7 +114,7 @@ export const road_material = [
                 cost:2100000
             },
             {
-                material: "Steelreinforcement",
+                material: "Steel Reinforcement",
                 volume:0.0,
                 volume_in_ton:0.0 ,
                 CO2emission:138.75,
