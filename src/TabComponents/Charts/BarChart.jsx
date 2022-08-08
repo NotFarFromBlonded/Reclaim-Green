@@ -15,7 +15,7 @@ const BarChart = (props) => {
   var data = {
     labels: props.chartData.map(x => x.material),
     datasets: [{
-      data: props.chartData.map(x => x.volume_in_ton),
+      data: props.type === "volume"?props.chartData.map(x => x.volume_in_ton):props.type==="emission"?props.chartData.map(x => x.CO2emission):props.chartData.map(x=>x.cost),
       backgroundColor: [
         'rgba(8, 61, 119, 1)',
         'rgba(235, 235, 211, 1)',

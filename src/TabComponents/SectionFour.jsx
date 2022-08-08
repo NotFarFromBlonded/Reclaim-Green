@@ -2,6 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { EmissionState } from '../Context';
 import BarChart from './Charts/BarChart';
+import PieChart from './Charts/PieChart';
+import DoughnutChart from './Charts/DoughnutChart';
 
 const SectionFour = () => {
   const {highwayType, highwayData, handleChangeHighway} = EmissionState()
@@ -32,12 +34,11 @@ const SectionFour = () => {
           </form>
         </div>
       </div>
-      {console.log(highwayData)}
       <div>
-        <BarChart chartData={highwayData} name="Volume of Materials Used in Construction" />
-      </div>
-      
-      
+        <BarChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
+        <PieChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
+        <DoughnutChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
+      </div> 
     </>
     
   )
