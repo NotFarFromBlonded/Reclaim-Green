@@ -24,8 +24,8 @@ const Context = ({children}) =>{
     const[predictedValues, setPredictedValues] = useState([]);
     const[submitting, setSubmitting] = useState(false);
     const[value, setValue] = React.useState(0);
-    const[highwayType, setHighwayType] = React.useState("NH")
-    const[highwayData, setHighwayData] = React.useState([road_material[0].Carbon_emission])
+    const[highwayType, setHighwayType] = React.useState("")
+    const[highwayData, setHighwayData] = React.useState([])
 
     const handleChange = (e) => {
         const selectedCountry = mockGHGEmissionData.find(country => country.country === e.target.value);

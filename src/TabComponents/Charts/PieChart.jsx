@@ -8,7 +8,7 @@ const PieChart = (props) => {
     var data = {
         labels: props.chartData.map(x => x.material),
         datasets: [{
-          data: props.type === "volume"?props.chartData.map(x => x.volume_in_ton):props.type==="emission"?props.chartData.map(x => x.CO2emission):props.chartData.map(x=>x.cost),
+          data: props.type === "volume"?props.chartData.map((x) => parseFloat((((x.volume_in_ton*100)/props.chartData.map(x=>x.volume_in_ton).reduce((acc, el)=>acc+=el,0))).toFixed(3))):props.type==="emission"?props.chartData.map((x) => parseFloat((((x.CO2emission*100)/props.chartData.map(x=>x.CO2emission).reduce((acc, el)=>acc+=el,0))).toFixed(3))):props.chartData.map((x)=>parseFloat((((x.cost*100)/props.chartData.map(x=>x.cost).reduce((acc, el)=>acc+=el,0))).toFixed(3))),
           backgroundColor: [
             'rgba(8, 61, 119, 1)',
             'rgba(235, 235, 211, 1)',
@@ -33,7 +33,7 @@ const PieChart = (props) => {
       }
     
       return(
-        <div style = {{width: "700px"}}>
+        <div style = {{width: "400px"}}>
           <Pie 
             data = {data}
             options = {options}
