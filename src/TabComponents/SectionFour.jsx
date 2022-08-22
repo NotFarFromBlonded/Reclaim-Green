@@ -24,7 +24,8 @@ const SectionFour = () => {
             <div className="form-row">
               <div className="form-group col">
                 <label style={{color: "#4ca950",paddingTop:"0px"}}>Highway</label>
-                <select name="highway" onChange={handleChangeHighway} value={highwayType}>
+                <select name="highway" onChange={handleChangeHighway} value={highwayType===""?"":highwayType}>
+                  <option value="" hidden>Choose Highway Type</option>
                   <option value="NH">National Highway(NH)</option>
                   <option value="SH">State Highway(SH)</option>
                   <option value="RR">Rural Roadways(RR)</option>
@@ -35,9 +36,9 @@ const SectionFour = () => {
         </div>
       </div>
       <div>
-        <BarChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
-        <PieChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
-        <DoughnutChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>
+        {highwayType===""&&highwayData.length===0?"":<BarChart chartData={highwayData} name="Volume of Materials Used in Construction" type="emission"/>}
+        {highwayType===""&&highwayData.length===0?"":<PieChart chartData={highwayData} name="Volume of Materials Used in Construction" type="emission"/>}
+        {highwayType===""&&highwayData.length===0?"":<DoughnutChart chartData={highwayData} name="Volume of Materials Used in Construction" type="volume"/>}
       </div> 
     </>
     
