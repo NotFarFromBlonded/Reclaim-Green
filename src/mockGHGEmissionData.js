@@ -375,50 +375,50 @@ export const mockGHGState = [
     {
         name:"ASSAM",
         electricity_consumption:341,
-        petroleum_consumption:2120,
-        natural_gas:2958,
+        petroleum_consumption:21.20,
+        natural_gas:29.58,
         coal_consumption:36
     },
     {
         name:"CHHATTISGARH",
         electricity_consumption:1961,
-        petroleum_consumption:2973,
+        petroleum_consumption:297.3,
         natural_gas:152,
         coal_consumption:158.409
     },
     {
         name:"JAMMU & KASHMIR",
         electricity_consumption:1322,
-        petroleum_consumption:1341,
+        petroleum_consumption:134.1,
         natural_gas:1010,
         coal_consumption:0.012 
     },
     {
         name:"JHARKHAND",
         electricity_consumption:938,
-        petroleum_consumption:2768,
-        natural_gas:1970,
+        petroleum_consumption:27.68,
+        natural_gas:197.0,
         coal_consumption:119.296
     },
     {
         name:"MADHYA PRADESH",
         electricity_consumption:1084,
-        petroleum_consumption:7009,
-        natural_gas:3560,
+        petroleum_consumption:70.09,
+        natural_gas:356.0,
         coal_consumption:132.531
     },
     {
         name:"MAHARASTRA",
         electricity_consumption:1424,
-        petroleum_consumption:18227,
-        natural_gas:6790,
+        petroleum_consumption:182.27,
+        natural_gas:679.0,
         coal_consumption:47.435
     },
     {
         name:"UTTAR PRADESH",
         electricity_consumption:606,
-        petroleum_consumption:15012,
-        natural_gas:7980,
+        petroleum_consumption:150.12,
+        natural_gas:79.80,
         coal_consumption:17.016
     }
 ]

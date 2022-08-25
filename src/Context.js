@@ -41,11 +41,11 @@ const Context = ({children}) =>{
     const handleChangeState = (e)=>{
         const selectedState = mockGHGState.find(state=>state.name === e.target.value);
         setSelectedState(selectedState.name);
-        setOil(selectedState.petroleum_consumption);
-        setGas(selectedState.natural_gas * 28.32);
-        setElectricity(selectedState.electricity_consumption);
-        setCoal(selectedState.coal_consumption*28.32);
-        setGHGEmission(selectedState.electricity_consumption*electricityFactor + selectedState.petroleum_consumption*oilFactor+selectedState.natural_gas*gasFactor+ selectedState.coal_consumption*coalFactor);
+        setOil(selectedState.oilConsumption);
+        setGas(selectedState.gasConsumption * 28.32);
+        setElectricity(selectedState.electricityConsumption);
+        setCoal(selectedState.coalConsumption*28.32);
+        setGHGEmission(selectedState.electricityConsumption*electricityFactor + selectedState.oilConsumption*oilFactor+selectedState.gasConsumption*gasFactor+ selectedState.coalConsumption*coalFactor);
     }
 
     const handleStwitch = (e) => {
@@ -62,7 +62,7 @@ const Context = ({children}) =>{
     const predictData = async() => {
 
         
-        const data = await axios.get(`https://shrouded-tundra-62725.herokuapp.com/predict?country=${selCountry}&reason=${selCause}&year=${selYear}`,{
+        const data = await axios.get(`http://127.0.0.1:5000/predict?country=${selCountry}&reason=${selCause}&year=${selYear}`,{
           responseType: "",
           headers:{
             'Content-Type': 'application/json',

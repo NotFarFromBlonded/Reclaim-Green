@@ -34,16 +34,22 @@ const SectionThree = () => {
             </div>
             <p></p>
       </div>
-      <div className = {classes.splitScreen}>
-        <div className={classes.topPane}>
+      <div>
+        <div>
           <Tableau
             url="https://public.tableau.com/views/CO2EmissionAnalysis_16499110310530/GloablImpact?:language=en-US&:display_count=n&:origin=viz_share_link"
             options = {options}
           />
         </div>
-        <div className={classes.bottomPane}>
+        <div>
           <Tableau
             url="https://public.tableau.com/views/CO2EmissionAnalysisDashboard-2/Countrywiseimpact?:language=en-US&:display_count=n&:origin=viz_share_link"
+            options = {options}
+          />
+        </div>
+        <div>
+          <Tableau
+            url="https://public.tableau.com/views/GlobalCO2EmissionDashboard_16614187360680/Sheet1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
             options = {options}
           />
         </div>
