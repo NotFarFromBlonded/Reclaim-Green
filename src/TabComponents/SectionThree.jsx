@@ -2,7 +2,7 @@ import React from 'react'
 import Tableau from "tableau-react";
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(()=>({
+const useStyles = makeStyles(() => ({
   splitScreen: {
     display: 'flex',
     flexDirection: 'row',
@@ -13,28 +13,30 @@ const useStyles = makeStyles(()=>({
     width: '50%',
   },
   bottomPane: {
-      width: '50%',
+    width: '50%',
   },
 }));
 
 const SectionThree = () => {
   const classes = useStyles();
   const options = {
-    hideTabs:true,
-    hideToolbar:true
+    hideTabs: true,
+    hideToolbar: true
   };
   return (
     <div>
-      <div className="container" style={{backgroundColor: "black", maxWidth:"1280px"}}>
-            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Snow" style={{width:"100%",height:"90vh",opacity:"0.5"}}></img>
-            <div className="centered">
-                <h2 style={{fontSize:"80px",fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>CO2e Visualizer</h2>
-                <br></br>
-                <p></p>
-            </div>
-            <p></p>
+      <div className="ghgheading" style={{ marginTop: "85px", marginLeft: "78px", textAlign: "center", marginBottom: "70px" }}>
+        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif", color: "darkgreen" }}>GHG EMISSION CALCULATOR </h1>
       </div>
-      <div>
+      <div className="bullets">
+          <h1 style={{marginLeft:"22px" ,marginBottom:"22px"}}>Instructions</h1>
+          <ol>
+            <li>Hover on graphs to get detail visualizations</li>
+            <li>Select country to see specific CO2 emissions for that country</li>
+            <li>Click on the image to get the visualizations</li>
+          </ol>
+        </div>
+        <div style={{marginTop:"62px"}} className="shallow">
         <div className = {classes.splitScreen}>
           <div className = {classes.topPane}>
             <Tableau
@@ -69,17 +71,9 @@ const SectionThree = () => {
           />
         </div>
       </div>
-      <div className="instructions">
-        <h3 className="head3">FOLLOW SET OF INSTRUCTIONS FOR BETTER VISUALISATIONS:</h3>
-          <dl>
-            <dt>- Hover on graphs to get detail about visualisation.</dt>
-            <dt>- Select country to see specific CO2e for that country.</dt>
-            <dt>- Click on the image to get the visualisation.</dt>
-          </dl>
-      </div>
     </div>
     
   )
 }
-
 export default SectionThree
+// Footer
