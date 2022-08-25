@@ -1,6 +1,7 @@
 export const coalFactor = 0.910;
 export const oilFactor = 2.296;
 export const gasFactor = 2.983;
+export const electricityFactor = 0.708;
 export const mockGHGEmissionData = [
     {
         country: "argentina",
@@ -367,5 +368,57 @@ export const mockGHGEmissionData = [
         gasConsumption: 84.90,
         coalConsumption: 2263.27,
         electricityFactor: 0.453,
+    }
+]
+
+export const mockGHGState = [
+    {
+        name:"ASSAM",
+        electricity_consumption:341,
+        petroleum_consumption:2120,
+        natural_gas:2958,
+        coal_consumption:36
+    },
+    {
+        name:"CHHATTISGARH",
+        electricity_consumption:1961,
+        petroleum_consumption:2973,
+        natural_gas:152,
+        coal_consumption:158.409
+    },
+    {
+        name:"JAMMU & KASHMIR",
+        electricity_consumption:1322,
+        petroleum_consumption:1341,
+        natural_gas:1010,
+        coal_consumption:0.012 
+    },
+    {
+        name:"JHARKHAND",
+        electricity_consumption:938,
+        petroleum_consumption:2768,
+        natural_gas:1970,
+        coal_consumption:119.296
+    },
+    {
+        name:"MADHYA PRADESH",
+        electricity_consumption:1084,
+        petroleum_consumption:7009,
+        natural_gas:3560,
+        coal_consumption:132.531
+    },
+    {
+        name:"MAHARASTRA",
+        electricity_consumption:1424,
+        petroleum_consumption:18227,
+        natural_gas:6790,
+        coal_consumption:47.435
+    },
+    {
+        name:"UTTAR PRADESH",
+        electricity_consumption:606,
+        petroleum_consumption:15012,
+        natural_gas:7980,
+        coal_consumption:17.016
     }
 ]
