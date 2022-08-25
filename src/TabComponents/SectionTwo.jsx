@@ -29,18 +29,11 @@ const SectionTwo = () => {
   }
   return (
     <div >
-      <div className="container" style={{backgroundColor: "black", maxWidth:"1280px"}}>
-            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Snow" style={{width:"100%",height:"90vh",opacity:"0.5"}}></img>
-            <div className="centered">
-                <h1 style={{fontSize:"90px",fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>FUTURE TRENDS</h1>
-                <p></p>
-            </div>
-            <p></p>
-        </div>
-        <div style={{height:"100vh"}}>
+      
+        <div style={{height:"100vh",marginTop:"120px"}}>
         <div className="container23" styles={{textAlign:"left"}}>
             <div className="c2">
-                <p className="para1" >The given dashboard will give you the values till 2018, to get the visualizations and predicted values for future year follow
+                <p className="para1" >The given dashboard will give you the values till 2025, to get the visualizations and predicted values for future year follow
 the following steps:
                 </p>
                 <p className='para1'>
@@ -61,7 +54,6 @@ the following steps:
                                   <option value="" hidden>Country</option>
                                   <option value="Canada">Canada</option>
                                   <option value="United States">United States</option>
-                                  <option value="India">India</option>
                                 </select>
                                 <div className="invalid-feedback">
                                   Please choose a country.
