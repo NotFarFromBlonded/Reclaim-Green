@@ -54,6 +54,7 @@ the following steps:
                                   <option value="" hidden>Country</option>
                                   <option value="Canada">Canada</option>
                                   <option value="United States">United States</option>
+                                  <option value="India">India</option>
                                 </select>
                                 <div className="invalid-feedback">
                                   Please choose a country.

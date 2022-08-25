@@ -26,7 +26,7 @@ const SectionThree = () => {
   return (
     <div>
       <div className="ghgheading" style={{ marginTop: "85px", marginLeft: "78px", textAlign: "center", marginBottom: "70px" }}>
-        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif", color: "darkgreen" }}>GHG EMISSION CALCULATOR </h1>
+        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif", color: "darkgreen" }}>CO2 Emission Visualizer </h1>
       </div>
       <div className="bullets">
           <h1 style={{marginLeft:"22px" ,marginBottom:"22px"}}>Instructions</h1>

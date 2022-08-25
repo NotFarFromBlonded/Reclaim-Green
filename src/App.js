@@ -92,7 +92,7 @@ function App() {
           <Tabs value={value} onChange={handleChange}>
             <Tab label="About" {...a11yProps(0)} className={value===0?classes.activeTabStyle:classes.defaultTabStyle}/>
             <Tab label="GHG Calculator" {...a11yProps(1)} className={value===1?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
-            <Tab label="Future Trends" {...a11yProps(2)} className={value===2?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
+            <Tab label="CO2e Trends" {...a11yProps(2)} className={value===2?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
             <Tab label="CO2e Visualizer" {...a11yProps(3)} className={value===3?classes.activeTabStyle:classes.defaultTabStyle} style={{marginLeft: 'auto'}}/>
           </Tabs>
         </Toolbar>
