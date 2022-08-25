@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { mockGHGEmissionData, oilFactor, gasFactor, coalFactor } from './mockGHGEmissionData';
+import { mockGHGEmissionData, oilFactor, gasFactor, coalFactor, electricityFactor, mockGHGState } from './mockGHGEmissionData';
 import {countryWithReason} from './countriesWithReason'
 import { solutionsToReason } from './solutionsToReasons';
 import axios from 'axios';
@@ -23,6 +23,10 @@ const Context = ({children}) =>{
     const[predictedValues, setPredictedValues] = useState([]);
     const[submitting, setSubmitting] = useState(false);
     const [value, setValue] = React.useState(0);
+    const[selectedState, setSelectedState] = useState("");
+    const[stwitch, setStwitch] = useState({
+        checkedA: false
+    })
 
     const handleChange = (e) => {
         const selectedCountry = mockGHGEmissionData.find(country => country.country === e.target.value);
@@ -32,6 +36,27 @@ const Context = ({children}) =>{
         setElectricity(selectedCountry.electricityConsumption);
         setCoal(selectedCountry.coalConsumption * 28.32);
         setGHGEmission(((selectedCountry.electricityFactor*selectedCountry.electricityFactor+selectedCountry.oilConsumption*oilFactor+selectedCountry.coalConsumption * 28.32*coalFactor+selectedCountry.gasConsumption * 28.32*gasFactor)/1000).toFixed(3))
+    }
+
+    const handleChangeState = (e)=>{
+        const selectedState = mockGHGState.find(state=>state.name === e.target.value);
+        setSelectedState(selectedState.name);
+        setOil(selectedState.petroleum_consumption);
+        setGas(selectedState.natural_gas * 28.32);
+        setElectricity(selectedState.electricity_consumption);
+        setCoal(selectedState.coal_consumption*28.32);
+        setGHGEmission(selectedState.electricity_consumption*electricityFactor + selectedState.petroleum_consumption*oilFactor+selectedState.natural_gas*gasFactor+ selectedState.coal_consumption*coalFactor);
+    }
+
+    const handleStwitch = (e) => {
+        setStwitch({[e.target.name]: e.target.checked });
+        setOil(0);
+        setGas(0);
+        setElectricity(0);
+        setCoal(0);
+        setGHGEmission(0);
+        setSelCountry("");
+        setSelectedState("");
     }
 
     const predictData = async() => {
@@ -111,7 +136,35 @@ const Context = ({children}) =>{
     }, [])
 
     return (
-        <Emission.Provider value={{value, setValue, handleWiggleImage, selectedCountry, electricity, oil, gas, coal, loading, handleChange, handleCountryChange, handleCauseChange, handleYearChange, handlePredictSubmit, ghgEmission, countryReasons, solutionsReason, selCountry, selCause, selYear, predictedValues, setPredictedValues, submitting}}>
+        <Emission.Provider value={{
+            value, 
+            setValue, 
+            handleWiggleImage, 
+            selectedCountry, 
+            electricity, 
+            oil, 
+            gas, 
+            coal, 
+            loading, 
+            handleChange, 
+            handleCountryChange, 
+            handleCauseChange, 
+            handleYearChange, 
+            handlePredictSubmit, 
+            ghgEmission, 
+            countryReasons, 
+            solutionsReason, 
+            selCountry, 
+            selCause, 
+            selYear, 
+            predictedValues, 
+            setPredictedValues, 
+            submitting,
+            stwitch,
+            handleStwitch,
+            handleChangeState,
+            selectedState
+        }}>
             {children}
         </Emission.Provider>
     )
