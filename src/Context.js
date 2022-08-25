@@ -145,7 +145,7 @@ const Context = ({children}) =>{
             setOil(Math.floor(Math.random()*(5914-207+1))+207);
             setGas(Math.floor(Math.random()*(283.05-1.34))+1.34);
             setCoal(Math.floor(Math.random()*(5343-3.79))+3.79);
-            setGHGEmission((Math.floor(Math.random()*(23210-935+1))+935)+(Math.floor(Math.random()*(5914-207+1))+207)+(Math.floor(Math.random()*(283.05-1.34))+1.34)+Math.floor(Math.random()*(5343-3.79))+3.79)
+            setGHGEmission(((Math.floor(Math.random()*(23210-935+1))+935)+(Math.floor(Math.random()*(5914-207+1))+207)+(Math.floor(Math.random()*(283.05-1.34))+1.34)+Math.floor(Math.random()*(5343-3.79))+3.79).toFixed(2));
         }
 
         if(oil!==0 || gas!==0 || coal!==0 || ghgEmission!==0){
