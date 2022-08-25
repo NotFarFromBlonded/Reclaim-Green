@@ -7,7 +7,7 @@ const PredictedImage = () => {
   const {selCountry} = EmissionState();
   return (
     <div>
-        <img alt = "predictionImage" className='country-map' src={selCountry==="United States"?usaPrediction:selCountry==="Canada"?canadaPrediction:selCountry==="India"?canadaPrediction:""}></img>
+        <img alt = "predictionImage" className='country-map' src={selCountry==="United States"?usaPrediction:selCountry==="Canada"?canadaPrediction:""}></img>
     </div>
   )
 }
