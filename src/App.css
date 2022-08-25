@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .App {
   text-align: center;
 }
@@ -38,7 +44,7 @@
 }
 
 /*custom css*/
-.container {
+/* .container {
   position: relative;
   text-align: center;
   color: white;
@@ -61,7 +67,7 @@
 .container23 {
   position: relative;
   text-align: left;
-}
+} */
 .head1 {
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
@@ -69,19 +75,24 @@
   color: #4ca950;
   font-size: 48px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .para1{
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.38;
-  padding: 0.5rem 10rem;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.38;
+    padding: 21px;
+    text-align: justify;
 }
 .fade-to-top{
   animation-name: fadeInUp;
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-delay: .3s;
+}
+.container-foot{
+  text-align: center;
 }
 @keyframes fadeInUp {
   0% {
@@ -133,4 +144,36 @@
 
 .titleSpan:hover{
   cursor: pointer;
+}
+.aboutpage{
+  display: flex;
+    margin: 6px;
+    padding: 12px;
+    align-items: center;
+    margin-top: 106px;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+}
+.container2{
+  justify-content: center;
+}
+.heading{
+  text-align: center;
+  font-family: 'Monoton', cursive;
+}
+.heading{
+  background-repeat: no-repeat;
+  background-position: 'right';
+  background-size: 'cover';
+  background-repeat: 'no-repeat';
+}
+.logos11{
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+.logos11 img{
+  height: 20vh;
+  width: 20vw;
 }
