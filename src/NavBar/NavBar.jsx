@@ -17,7 +17,7 @@ const NavBar = () => {
                     GHG CALCULATOR
                 </Typography>
                 <Typography>
-                    FUTURE TRENDS
+                    CO2e TRENDS
                 </Typography>
                 <Typography>
                     CO2e VISUALIZER
