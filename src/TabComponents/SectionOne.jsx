@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { EmissionState } from '../Context';
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles(()=>({
   splitScreen: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles(()=>({
 
 const SectionOne = () => {
   const classes = useStyles();
-  const {coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry} = EmissionState()
+  const {coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry, stwitch, handleStwitch, handleChangeState, selectedState} = EmissionState()
   return (
     <>
       <div className="container" style={{backgroundColor: "black",maxWidth:"1280px"}}>
@@ -57,13 +58,20 @@ const SectionOne = () => {
       </div>
       <div className={classes.splitScreen}>
       <div className={classes.topPane}>
+      <Switch
+        checked={stwitch.checkedA}
+        onChange={handleStwitch}
+        color="primary"
+        name="checkedA"
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
       <div className="card m-3 mx-auto" style={{borderRadius: "0.5rem", minWidth: "320px", maxWidth: "320px", backgroundColor: "#f2f2f2", color: "#4ca950"}}>
                 <div className="card-body" style={{borderRadius: "0.25rem"}}>
                     <form>
                       <div className="form-row">
                             <div className="form-group col">
-                                <label style={{color: "#4ca950",paddingTop:"0px"}}>Country</label>
-                                <select name="country" onChange={handleChange} value={selectedCountry!==""?selectedCountry:""}>
+                                <label style={{color: "#4ca950",paddingTop:"0px"}}>{stwitch.checkedA===false?"Country":"State"}</label>
+                                {stwitch.checkedA === false?<select name="country" onChange={handleChange} value={selectedCountry!==""?selectedCountry:""}>
                                   <option hidden value="">Choose here</option>
                                   <option value="argentina">Argentina</option>
                                   <option value="australia">Australia</option>
@@ -110,7 +118,17 @@ const SectionOne = () => {
                                   <option value="united arab emirates">United Arab Emirates</option>
                                   <option value="united kingdom">United Kingdom</option>
                                   <option value="united states of america">United States of America</option>
+                              </select>:
+                              <select name = "state" onChange = {handleChangeState} value= {selectedState!==""?selectedState:""}>
+                                <option hidden value="">Choose here</option>
+                                <option value="ASSAM">Assam</option>
+                                <option value="CHHATTISGARH">Chattisgarh</option>
+                                <option value="JAMMU & KASHMIR">Jammu & Kashmir</option>
+                                <option value="JHARKHAND">Jharkhand</option>
+                                <option value="MADHYA PRADESH">Madhya Pradesh</option>
+                                <option value="UTTAR PRADESH">Uttar Pradesh</option>
                               </select>
+                              }
                             </div>
                         </div>
                         <div className="form-row">
