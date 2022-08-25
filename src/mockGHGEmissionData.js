@@ -374,51 +374,51 @@ export const mockGHGEmissionData = [
 export const mockGHGState = [
     {
         name:"ASSAM",
-        electricity_consumption:341,
-        petroleum_consumption:21.20,
-        natural_gas:29.58,
-        coal_consumption:36
+        electricityConsumption:341,
+        oilConsumption:21.20,
+        gasConsumption:29.58,
+        coalConsumption:36
     },
     {
         name:"CHHATTISGARH",
-        electricity_consumption:1961,
-        petroleum_consumption:297.3,
-        natural_gas:152,
-        coal_consumption:158.409
+        electricityConsumption:1961,
+        oilConsumption:297.3,
+        gasConsumption:15.2,
+        coalConsumption:158.409
     },
     {
         name:"JAMMU & KASHMIR",
-        electricity_consumption:1322,
-        petroleum_consumption:134.1,
-        natural_gas:1010,
-        coal_consumption:0.012 
+        electricityConsumption:1322,
+        oilConsumption:134.1,
+        gasConsumption:10.10,
+        coalConsumption:0.012 
     },
     {
         name:"JHARKHAND",
-        electricity_consumption:938,
-        petroleum_consumption:27.68,
-        natural_gas:197.0,
-        coal_consumption:119.296
+        electricityConsumption:938,
+        oilConsumption:27.68,
+        gasConsumption:19.70,
+        coalConsumption:119.296
     },
     {
         name:"MADHYA PRADESH",
-        electricity_consumption:1084,
-        petroleum_consumption:70.09,
-        natural_gas:356.0,
-        coal_consumption:132.531
+        electricityConsumption:1084,
+        oilConsumption:70.09,
+        gasConsumption:35.60,
+        coalConsumption:132.531
     },
     {
         name:"MAHARASTRA",
-        electricity_consumption:1424,
-        petroleum_consumption:182.27,
-        natural_gas:679.0,
-        coal_consumption:47.435
+        electricityConsumption:1424,
+        oilConsumption:182.27,
+        gasConsumption:67.90,
+        coalConsumption:47.435
     },
     {
         name:"UTTAR PRADESH",
-        electricity_consumption:606,
-        petroleum_consumption:150.12,
-        natural_gas:79.80,
-        coal_consumption:17.016
+        electricityConsumption:606,
+        oilConsumption:150.12,
+        gasConsumption:7.980,
+        coalConsumption:17.016
     }
 ]

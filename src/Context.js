@@ -27,7 +27,10 @@ const Context = ({children}) =>{
     const[stwitch, setStwitch] = useState({
         checkedA: false
     })
+    const[repeater, setRepeater] = useState(0);
 
+    const[mockGHGDataRandomCountry, setMockGHGDataRandomCountry] = useState([]); 
+    const[mockGHGDataRandomState, setMockGHGDataRandomState] = useState([]); 
     const handleChange = (e) => {
         const selectedCountry = mockGHGEmissionData.find(country => country.country === e.target.value);
         setSelectedCountry(selectedCountry.country);
@@ -45,7 +48,7 @@ const Context = ({children}) =>{
         setGas(selectedState.gasConsumption * 28.32);
         setElectricity(selectedState.electricityConsumption);
         setCoal(selectedState.coalConsumption*28.32);
-        setGHGEmission(selectedState.electricityConsumption*electricityFactor + selectedState.oilConsumption*oilFactor+selectedState.gasConsumption*gasFactor+ selectedState.coalConsumption*coalFactor);
+        setGHGEmission((selectedState.electricityConsumption*electricityFactor + selectedState.oilConsumption*oilFactor+selectedState.gasConsumption*gasFactor+ selectedState.coalConsumption*coalFactor).toFixed(2));
     }
 
     const handleStwitch = (e) => {
@@ -100,7 +103,7 @@ const Context = ({children}) =>{
         setSubmitting(true)
         predictData().then((res)=>{
             const re = [];
-            for(let i = 0; i < res.predictions.length; i++){
+            for(let i = 0; i < selYear-2018; i++){
                 re.push({
                    'year': 2019+i,
                    'value': res.predictions[i][0]
@@ -134,6 +137,22 @@ const Context = ({children}) =>{
         setSolutionsReason(splitKeyValue(solutionsToReason[0]))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(()=>{
+        
+        const newData = ()=>{
+            setElectricity(Math.floor(Math.random()*(23210-935+1))+935);
+            setOil(Math.floor(Math.random()*(5914-207+1))+207);
+            setGas(Math.floor(Math.random()*(283.05-1.34))+1.34);
+            setCoal(Math.floor(Math.random()*(5343-3.79))+3.79);
+            setGHGEmission((Math.floor(Math.random()*(23210-935+1))+935)+(Math.floor(Math.random()*(5914-207+1))+207)+(Math.floor(Math.random()*(283.05-1.34))+1.34)+Math.floor(Math.random()*(5343-3.79))+3.79)
+        }
+
+        if(oil!==0 || gas!==0 || coal!==0 || ghgEmission!==0){
+            newData();
+        }
+        setInterval(() => setRepeater(prevState=>prevState+1), 10000);
+    },[repeater])
 
     return (
         <Emission.Provider value={{
