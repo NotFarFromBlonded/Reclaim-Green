@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { EmissionState } from '../Context';
-import Switch from '@material-ui/core/Switch';
 import szffwe from '../Img/szffwe.png';
 
 const useStyles = makeStyles(() => ({
@@ -48,7 +47,7 @@ const useStyles = makeStyles(() => ({
 
 const SectionOne = () => {
   const classes = useStyles();
-  const { coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry, stwitch, handleStwitch, handleChangeState, selectedState } = EmissionState()
+  const { coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry, stwitch, handleStwitch, handleChangeState, selectedState, handleChangeParam,  param, selectedCity, handleChangeCity} = EmissionState()
   return (
     <>
       <div className="ghgheading" style={{ marginTop: "85px", marginLeft: "78px" ,textAlign:"center" ,marginBottom:"70px"}}>
@@ -68,13 +67,11 @@ const SectionOne = () => {
           </ol>
         </div>
 <div className="swichtoogle" style={{padding: "49px",    marginRight: "231px"}}>
-<Switch 
-          checked={stwitch.checkedA}
-          onChange={handleStwitch}
-          color="primary"
-          name="checkedA"
-          inputProps={{ 'aria-label': 'primary checkbox' }}
-        />
+<select name = "triple" onChange={handleChangeParam} value={param}>
+                      <option value="country">Country</option>
+                      <option value="state">State</option>
+                      <option value="city">City</option>
+                    </select>
 </div>
        
       </div>
@@ -87,8 +84,8 @@ const SectionOne = () => {
               <form>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>{stwitch.checkedA === false ? "Country" : "State"}</label>
-                    {stwitch.checkedA === false ? <select name="country" onChange={handleChange} value={selectedCountry !== "" ? selectedCountry : ""}>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>{param === "country" ? "Country" : param==="state"?"State":"City"}</label>
+                    {param === "country" ? <select name="country" onChange={handleChange} value={selectedCountry !== "" ? selectedCountry : ""}>
                       <option hidden value="">Choose here</option>
                       <option value="argentina">Argentina</option>
                       <option value="australia">Australia</option>
@@ -135,8 +132,7 @@ const SectionOne = () => {
                       <option value="united arab emirates">United Arab Emirates</option>
                       <option value="united kingdom">United Kingdom</option>
                       <option value="united states of america">United States of America</option>
-                    </select> :
-                      <select name="state" onChange={handleChangeState} value={selectedState !== "" ? selectedState : ""}>
+                    </select> : param === "state"?<select name="state" onChange={handleChangeState} value={selectedState !== "" ? selectedState : ""}>
                         <option hidden value="">Choose here</option>
                         <option value="ASSAM">Assam</option>
                         <option value="CHHATTISGARH">Chattisgarh</option>
@@ -144,6 +140,15 @@ const SectionOne = () => {
                         <option value="JHARKHAND">Jharkhand</option>
                         <option value="MADHYA PRADESH">Madhya Pradesh</option>
                         <option value="UTTAR PRADESH">Uttar Pradesh</option>
+                      </select>: <select name="city" onChange={handleChangeCity} value={selectedCity !== ""? selectedCity: ""}>
+                        <option hidden value="">Choose here</option>
+                        <option value="GUWAHATI">Guwahati</option>
+                        <option value="RAIPUR">Raipur</option>
+                        <option value="SRINAGAR">Srinagar</option>
+                        <option value="RANCHI">Ranchi</option>
+                        <option value="BHOPAL">Bhopal</option>
+                        <option value="NAGPUR">Nagpur</option>
+                        <option value="GHAZIABAD">Ghaziabad</option>
                       </select>
                     }
                   </div>
