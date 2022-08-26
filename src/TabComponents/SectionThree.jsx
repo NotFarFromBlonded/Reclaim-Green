@@ -37,6 +37,12 @@ const SectionThree = () => {
           </ol>
         </div>
         <div style={{marginTop:"62px"}} className="shallow">
+        <div>
+          <Tableau
+            url="https://public.tableau.com/views/CO2emissions6_0/Dashboard6?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
+            options = {options}
+          />
+        </div>
         <div className = {classes.splitScreen}>
           <div className = {classes.topPane}>
             <Tableau
