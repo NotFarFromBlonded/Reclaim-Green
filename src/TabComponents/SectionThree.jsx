@@ -26,10 +26,10 @@ const SectionThree = () => {
   return (
     <div>
       <div className="ghgheading" style={{ marginTop: "85px", marginLeft: "78px", textAlign: "center", marginBottom: "70px" }}>
-        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif", color: "darkgreen" }}>CO2 Emission Visualizer </h1>
+        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif", color: "darkgreen" }}>CO2 Emission Visualizer<br></br>(कार्बन की मात्रा को घटते उठते देखे) </h1>
       </div>
       <div className="bullets">
-          <h1 style={{marginLeft:"22px" ,marginBottom:"22px"}}>Instructions</h1>
+          <h1 style={{marginLeft:"22px" ,marginBottom:"22px"}}>Instructions<br></br><span style={{fontSize:"20px"}}>(कैसे इस्तेमाल करे)</span></h1>
           <ol>
             <li>Hover on graphs to get detail visualizations</li>
             <li>Select country to see specific CO2 emissions for that country</li>
