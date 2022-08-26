@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { EmissionState } from '../Context';
+import Switch from '@material-ui/core/Switch';
 import szffwe from '../Img/szffwe.png';
 
 const useStyles = makeStyles(() => ({
@@ -47,11 +48,11 @@ const useStyles = makeStyles(() => ({
 
 const SectionOne = () => {
   const classes = useStyles();
-  const { coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry, stwitch, handleStwitch, handleChangeState, selectedState, handleChangeParam,  param, selectedCity, handleChangeCity} = EmissionState()
+  const { coal, oil, gas, electricity, handleChange, ghgEmission, selectedCountry, stwitch, handleStwitch, handleChangeState, selectedState } = EmissionState()
   return (
     <>
       <div className="ghgheading" style={{ marginTop: "85px", marginLeft: "78px" ,textAlign:"center" ,marginBottom:"70px"}}>
-        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif",color:"darkgreen"}}>GHG <img src={szffwe} alt="worldmap"></img>EMISSION CALCULATOR </h1>
+        <h1 style={{ fontSize: "60px", fontFamily: "Georgia, 'Times New Roman', Times, serif",color:"darkgreen"}}>GHG <img src={szffwe} alt="worldmap"></img>EMISSION CALCULATOR <br></br>(ग्रीनहाउस गणना-यंत्र)</h1>
         <br></br>
         <h6>"Use the calculator below to view per capita GHG Emissions from a list of available countries in tCO2(tonnes of CO2e)"</h6>
         <p></p>
@@ -59,7 +60,7 @@ const SectionOne = () => {
 
       <div className="toggleButton" style={{ display: "flex", justifyContent: "space-around" ,color:""}}>
         <div className="bullets">
-          <h1 style={{ textAlign: "center" }}>Instructions</h1>
+          <h1 style={{ textAlign: "center" }}>Instructions<br></br><span style={{fontSize:"20px",marginTop:"-12px"}}>(कैसे इस्तेमाल करे)</span></h1>
           <ol>
             <li>Country wise GHG emission calculation by default</li>
             <li>To view STATE wise GHG emission switch on the toggle GHG emission</li>
@@ -67,11 +68,13 @@ const SectionOne = () => {
           </ol>
         </div>
 <div className="swichtoogle" style={{padding: "49px",    marginRight: "231px"}}>
-<select name = "triple" onChange={handleChangeParam} value={param}>
-                      <option value="country">Country</option>
-                      <option value="state">State</option>
-                      <option value="city">City</option>
-                    </select>
+<Switch 
+          checked={stwitch.checkedA}
+          onChange={handleStwitch}
+          color="primary"
+          name="checkedA"
+          inputProps={{ 'aria-label': 'primary checkbox' }}
+        />
 </div>
        
       </div>
@@ -84,8 +87,8 @@ const SectionOne = () => {
               <form>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>{param === "country" ? "Country" : param==="state"?"State":"City"}</label>
-                    {param === "country" ? <select name="country" onChange={handleChange} value={selectedCountry !== "" ? selectedCountry : ""}>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>{stwitch.checkedA === false ? "Country" : "State"}</label>
+                    {stwitch.checkedA === false ? <select name="country" onChange={handleChange} value={selectedCountry !== "" ? selectedCountry : ""}>
                       <option hidden value="">Choose here</option>
                       <option value="argentina">Argentina</option>
                       <option value="australia">Australia</option>
@@ -132,7 +135,8 @@ const SectionOne = () => {
                       <option value="united arab emirates">United Arab Emirates</option>
                       <option value="united kingdom">United Kingdom</option>
                       <option value="united states of america">United States of America</option>
-                    </select> : param === "state"?<select name="state" onChange={handleChangeState} value={selectedState !== "" ? selectedState : ""}>
+                    </select> :
+                      <select name="state" onChange={handleChangeState} value={selectedState !== "" ? selectedState : ""}>
                         <option hidden value="">Choose here</option>
                         <option value="ASSAM">Assam</option>
                         <option value="CHHATTISGARH">Chattisgarh</option>
@@ -140,40 +144,31 @@ const SectionOne = () => {
                         <option value="JHARKHAND">Jharkhand</option>
                         <option value="MADHYA PRADESH">Madhya Pradesh</option>
                         <option value="UTTAR PRADESH">Uttar Pradesh</option>
-                      </select>: <select name="city" onChange={handleChangeCity} value={selectedCity !== ""? selectedCity: ""}>
-                        <option hidden value="">Choose here</option>
-                        <option value="GUWAHATI">Guwahati</option>
-                        <option value="RAIPUR">Raipur</option>
-                        <option value="SRINAGAR">Srinagar</option>
-                        <option value="RANCHI">Ranchi</option>
-                        <option value="BHOPAL">Bhopal</option>
-                        <option value="NAGPUR">Nagpur</option>
-                        <option value="GHAZIABAD">Ghaziabad</option>
                       </select>
                     }
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Electricity Consumption(KWh/Yr)</label>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Electricity Consumption(KWh/Yr)<br></br>(बिजली की खपत)</label>
                     <input name="electricityConsumption" type="number" step="0.1" value={electricity} className="form-control" readOnly />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Petroleum Consumption(Lt/Yr)</label>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Petroleum Consumption(Lt/Yr)<br></br>(पेट्रोलियम खपत)</label>
                     <input type="number" step="0.1" value={oil} className="form-control" readOnly />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Natural Gas Consumption(Kg/Yr)</label>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Natural Gas Consumption(Kg/Yr)<br></br>(प्राकृतिक गैस की खपत)</label>
                     <input type="number" step="0.01" value={gas} className="form-control" readOnly />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group col">
-                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Coal Consumption(Kg/Yr)</label>
+                    <label style={{ color: "#4ca950", paddingTop: "0px" }}>Coal Consumption(Kg/Yr)<br></br>(कोयले की खपत)</label>
                     <input type="text" step="0.01" value={coal} className="form-control" readOnly />
                   </div>
                 </div>
@@ -184,7 +179,7 @@ const SectionOne = () => {
         <div className={classes.bottomPane}>
           <div>
             <p className={classes.para1}>
-              Calculated GHG Emissions:
+              Calculated GHG Emissions: 
             </p>
             <p className={classes.para2}>
               {ghgEmission} tCO2
