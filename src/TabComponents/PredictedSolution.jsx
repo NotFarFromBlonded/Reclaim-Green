@@ -49,7 +49,7 @@ const PredictedSolution = () => {
                 <Card className={classes.card}>
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Solutions:
+                      Solutions:(समाधान)
                     </Typography>
                     <Typography>
                         {options}
