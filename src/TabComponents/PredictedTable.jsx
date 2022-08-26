@@ -72,7 +72,7 @@ const PredictedTable = () => {
             <div className={classes.table}>
             <Container style={{ textAlign: 'center' }} >
                 <Paper >
-                        <p>Predicted Values:</p>
+                        <p>Predicted Values:(अनुमानित मूल्य:)</p>
                         <TableContainer className={classes.container}>
                             <Table stickyHeader aria-label="sticky table" >
                                 <TableHead >
