@@ -422,3 +422,54 @@ export const mockGHGState = [
         coalConsumption:17.016
     }
 ]
+export const mockGHGCity = [
+    {
+        name:"GUWAHATI",
+        electricityConsumption:56.83,
+        oilConsumption:3.5,
+        gasConsumption:1.8,
+        coalConsumption:6.000
+    },
+    {
+        name:"RAIPUR",
+        electricityConsumption:178.2727,
+        oilConsumption:2.70272,
+        gasConsumption:5.04,
+        coalConsumption:1.44
+    },
+    {
+        name:"SRINAGAR",
+        electricityConsumption:440,
+        oilConsumption:4.47,
+        gasConsumption:1.22,
+        coalConsumption:4 
+    },
+    {
+        name:"RANCHI",
+        electricityConsumption:78.16,
+        oilConsumption:2.51,
+        gasConsumption:6.53,
+        coalConsumption:1.08
+    },
+    {
+        name:"BHOPAL",
+        electricityConsumption:31.88,
+        oilConsumption:2.06,
+        gasConsumption:3.82,
+        coalConsumption:3.9
+    },
+    {
+        name:"NAGPUR",
+        electricityConsumption:5.27,
+        oilConsumption:6.75,
+        gasConsumption:9.17,
+        coalConsumption:1.75
+    },
+    {
+        name:"GHAZIABAD",
+        electricityConsumption:5.50,
+        oilConsumption:8.34,
+        gasConsumption:1.61,
+        coalConsumption:9.45
+    }
+]

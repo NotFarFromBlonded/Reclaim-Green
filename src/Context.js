@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { mockGHGEmissionData, oilFactor, gasFactor, coalFactor, electricityFactor, mockGHGState } from './mockGHGEmissionData';
+import { mockGHGEmissionData, oilFactor, gasFactor, coalFactor, electricityFactor, mockGHGState, mockGHGCity } from './mockGHGEmissionData';
 import {countryWithReason} from './countriesWithReason'
 import { solutionsToReason } from './solutionsToReasons';
 import axios from 'axios';
@@ -28,9 +28,23 @@ const Context = ({children}) =>{
         checkedA: false
     })
     const[repeater, setRepeater] = useState(0);
+    const[param, setParam] = useState("country");
+    const[selectedCity, setSelectedCity] = useState("");
 
     const[mockGHGDataRandomCountry, setMockGHGDataRandomCountry] = useState([]); 
     const[mockGHGDataRandomState, setMockGHGDataRandomState] = useState([]); 
+
+    const handleChangeParam = (e)=>{
+        setParam(e.target.value);
+        setOil(0);
+        setGas(0);
+        setElectricity(0);
+        setCoal(0);
+        setGHGEmission(0);
+        setSelCountry("");
+        setSelectedState("");
+        setSelectedCity("");
+    }
     const handleChange = (e) => {
         const selectedCountry = mockGHGEmissionData.find(country => country.country === e.target.value);
         setSelectedCountry(selectedCountry.country);
@@ -60,6 +74,16 @@ const Context = ({children}) =>{
         setGHGEmission(0);
         setSelCountry("");
         setSelectedState("");
+    }
+
+    const handleChangeCity = (e)=>{
+        const selectedCity = mockGHGCity.find(state=>state.name === e.target.value);
+        setSelectedCity(selectedCity.name);
+        setOil(selectedCity.oilConsumption);
+        setGas(selectedCity.gasConsumption * 28.32);
+        setElectricity(selectedCity.electricityConsumption);
+        setCoal(selectedCity.coalConsumption*28.32);
+        setGHGEmission((selectedCity.electricityConsumption*electricityFactor + selectedCity.oilConsumption*oilFactor+selectedCity.gasConsumption*gasFactor+ selectedCity.coalConsumption*coalFactor).toFixed(2));
     }
 
     const predictData = async() => {
@@ -182,7 +206,11 @@ const Context = ({children}) =>{
             stwitch,
             handleStwitch,
             handleChangeState,
-            selectedState
+            selectedState,
+            param,
+            handleChangeParam,
+            handleChangeCity,
+            selectedCity
         }}>
             {children}
         </Emission.Provider>
